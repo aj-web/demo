@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * 自己写的方法
  * 复杂业务层处理
+ * @author bangsun
  */
 
 public interface UserService {

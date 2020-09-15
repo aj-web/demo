@@ -2,10 +2,12 @@ package com.chezj.demo.dao;
 
 import com.chezj.demo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 

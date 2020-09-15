@@ -5,37 +5,37 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
-    <result column="phone" property="phone" jdbcType="BIGINT" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from users
+    delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.chezj.demo.entity.User" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into users (username, age, phone, 
+    insert into user (username, age, phone, 
       email)
-    values (#{username,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{phone,jdbcType=BIGINT}, 
+    values (#{username,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.chezj.demo.entity.User" >
-    update users
+    update user
     set username = #{username,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
-      phone = #{phone,jdbcType=BIGINT},
+      phone = #{phone,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select id, username, age, phone, email
-    from users
+    from user
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, username, age, phone, email
-    from users
+    from user
   </select>
 </mapper>
