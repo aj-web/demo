@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
 
+
     @Override
-    public String ShowDetailUserInfo(User user) {
-        userMapper.selectByPrimaryKey(user.getId());
-        return ToJson.ShowDetailInfo(userMapper.selectByPrimaryKey(user.getId()));
+    public String showDetailUserInfo(int id) {
+        return ToJson.ShowDetailInfo(userMapper.selectByPrimaryKey(id));
     }
 }

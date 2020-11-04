@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${article.title}">标题</title>
+</head>
+<span sec:authentication=name"></span></strong></span>
+<span sec:authorize=hasRole('ROLE_ADMIN')"＞管理员></span>
+<span sec:authorize=hasRole('ROLE_USER')">普通用户</span>
+<body>
+<div th:text="${article.title}">标题</div>
+<div th:text="${article.body}">标题</div>
+</body>
+</html>
