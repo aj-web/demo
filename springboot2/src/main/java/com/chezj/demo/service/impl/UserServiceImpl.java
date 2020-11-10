@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String showDetailUserInfo(int id) {
-        return ToJson.ShowDetailInfo(userMapper.selectByPrimaryKey(id));
+        return ToJson.showDetailInfo(userMapper.selectByPrimaryKey(id));
     }
 
     @Override

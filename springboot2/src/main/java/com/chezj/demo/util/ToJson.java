@@ -13,7 +13,7 @@ import net.sf.json.JSONObject;
  * @Date 2020/9/6 
  */
 public class ToJson {
-    public static String ShowDetailInfo(User user) {
+    public static String showDetailInfo(User user) {
         JSONObject jsonpObject= JSONObject.fromObject(user);
         String str = jsonpObject.toString();
         return str;

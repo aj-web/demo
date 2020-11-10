@@ -86,8 +86,6 @@ public class UserFindController {
 
     @GetMapping("/results")
     public String results(){
-        User user = new User();
-
         return "/results";
     }
 

@@ -8,6 +8,13 @@ import java.util.List;
 
 @Mapper
 @Component
+/**
+ * @description:用户基本功能
+ * @author: bangsun
+ * @date: 2020/11/10 18:05
+ No such property: code for class: Script1
+ * @return:
+ */
 public interface UserMapper {
     /**
      * 主键删除
