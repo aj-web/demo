@@ -66,8 +66,6 @@ public class UserFindController {
         User user1=userService.selectUser(id);
         ModelAndView modelAndView = new ModelAndView("demo");
         modelAndView.addObject("user",user1);
-        Session session=new Session();
-
         return modelAndView;
     }
 
