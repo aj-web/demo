@@ -3,7 +3,7 @@ package com.chezj.demo.constant;
 import lombok.Getter;
 
 /**
- * @description:状态码封装，本质上是一个美剧
+ * @description:状态码封装，本质上是一个枚举
  * @author: bangsun
  * @date: 2020/10/20 17:29
  */
