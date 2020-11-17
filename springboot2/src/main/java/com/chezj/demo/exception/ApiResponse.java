@@ -9,7 +9,6 @@ import lombok.Data;
  * @author: bangsun
  * @date: 2020/11/16 15:35
  No such property: code for class: Script1
- * @return:
  */
 @Data
 public class ApiResponse {

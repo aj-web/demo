@@ -39,8 +39,8 @@ public class UserFindController {
 
     /**
      * 测试自定义接口抛出Json异常
-     * @return
-     * @throws JSONException
+     * @return 返回异常
+     * @throws JSONException 抛出
      */
     @GetMapping("getUserDetail")
     @ResponseBody
@@ -50,7 +50,7 @@ public class UserFindController {
 
     /**
      * 读取属性文件钟的内容
-     * @return
+     * @return 返回map
      */
     @GetMapping("/property")
     @ResponseBody
@@ -60,19 +60,18 @@ public class UserFindController {
 
     /**
      * Thymeleaf页面初始化显示
-     * @param model
-     * @return
-     * @throws Exception
+     * @param model 参数
+     * @return 返回页面
      */
     @RequestMapping("/helloworld")
-    public String helloWorld(Model model) throws Exception{
+    public String helloWorld(Model model) {
         model.addAttribute("mav","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         return "example/hello";
     }
 
     /**
      * 测试页面异常
-     * @return
+     * @return 返回页面异常
      */
     @GetMapping("/page")
     public ModelAndView pageException(){
@@ -81,20 +80,20 @@ public class UserFindController {
 
     /**
      * 主键插叙
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id 主键入参
+     * @return 返回null
      */
     @GetMapping("/{id}")
-    public ModelAndView getArticle(@PathVariable("id") Integer id) throws Exception{
+    public ModelAndView getArticle(@PathVariable("id") Integer id) {
+        System.out.println(id);
         return null;
     }
 
     /**
      * 主键查询，返回对象，Thymeleaf页面解析对象数据
-     * @param id
-     * @return
-     * @throws Exception
+     * @param id 主键
+     * @return 返回页面和对象
+     * @throws Exception 异常
      */
     @GetMapping("/Thy/{id}")
     public ModelAndView testThymeleaf(@PathVariable Integer id) throws Exception{
@@ -106,8 +105,8 @@ public class UserFindController {
 
     /**
      * 简单页面测试
-     * @param request
-     * @return
+     * @param request 参数
+     * @return 返回页面和参数
      */
     @RequestMapping(value = "/addUserTest",method= RequestMethod.GET)
     public ModelAndView addUserTest(HttpServletRequest request){
@@ -118,8 +117,8 @@ public class UserFindController {
 
     /**
      * 显示表单
-     * @param user
-     * @return
+     * @param user 传入对象
+     * @return 返回页面
      */
     @GetMapping("/test")
     public String showForm(User user){
@@ -128,7 +127,7 @@ public class UserFindController {
 
     /**
      * 显示结果页面
-     * @return
+     * @return 返回页面
      */
     @GetMapping("/results")
     public String results(){
@@ -138,10 +137,10 @@ public class UserFindController {
     /**
      * 登录验证，结合Hibernate-validator对页面传入的参数进行检验，成功后
      * 重定向到结果页面，并将对象传入结果页面
-     * @param user
-     * @param bindingResult
-     * @param attr
-     * @return
+     * @param user 对象入参
+     * @param bindingResult 异常结果
+     * @param attr 请求作为参数
+     * @return 返回页面和对象
      */
     @PostMapping("/addUser")
     public String addUser(@Valid User user, BindingResult bindingResult, RedirectAttributes attr){
