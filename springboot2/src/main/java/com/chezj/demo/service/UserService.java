@@ -1,5 +1,7 @@
 package com.chezj.demo.service;
 
+import com.chezj.demo.entity.User;
+
 /**
  * 自己写的方法
  * 复杂业务层处理
@@ -7,14 +9,25 @@ package com.chezj.demo.service;
  */
 
 public interface UserService {
+
     /**
-     * @description:
-     * @author: bangsun
-     * @date: 2020/11/2 10:25
-     No such property: code for class: Script1
-     * @return: java.lang.String
+     * 主键查找用户
+     * @param id
+     * @return
      */
     String showDetailUserInfo(int id);
 
+    /**
+     * 主键查找用户
+     * @param id
+     * @return
+     */
+    User selectUser(Integer id);
 
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
+    String addUser(User user);
 }

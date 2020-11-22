@@ -11,10 +11,10 @@ import java.util.HashMap;
  */
 public class Test3 {
     public int lengthOfLongestSubstring(String s) {
-        if(s.equals("") ||s.equals(null)){
+        if("".equals(s) || s == null){
             return 0;
         }
-        int MAX=0;
+        int max=0;
         int left=0;
         int le=s.length();
         HashMap<Character,Integer> hashMap = new HashMap<>();
@@ -23,10 +23,10 @@ public class Test3 {
                 left=Math.max(left,hashMap.get(s.charAt(start))+1);
             }
             hashMap.put(s.charAt(start),start);
-            MAX=Math.max(left,start-left+1);
+            max=Math.max(left,start-left+1);
         }
 
-        return MAX;
+        return max;
     }
 
     public static void main(String[] args) {

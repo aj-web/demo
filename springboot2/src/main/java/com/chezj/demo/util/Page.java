@@ -9,18 +9,30 @@ package com.chezj.demo.util;
  *
  */
 public class Page {
-	
-	// 分页查询开始记录位置
+
+	/**
+	 * 分页查询开始记录位置
+	 */
 	private int begin;
-	// 分页查看下结束位置
+	/**
+	 * 分页查看下结束位置
+	 */
 	private int end;
-	// 每页显示记录数
+	/**
+	 * 每页显示记录数
+	 */
 	private int length;
-	// 查询结果总记录数
+	/**
+	 * 查询结果总记录数
+	 */
 	private int count;
-	// 当前页码
+	/**
+	 * 当前页码
+	 */
 	private int current;
-	// 总共页数
+	/**
+	 * 总共页数
+	 */
 	private int total;
 	
 	public Page() {
