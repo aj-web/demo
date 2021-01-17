@@ -1,6 +1,9 @@
 package com.chezj.demo.leetcode;
 
+import org.apache.commons.lang.enums.Enum;
+
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @description:leetcode第一题
@@ -56,6 +59,24 @@ public class Test1 {
     public static void main(String[] args) {
         Test1 test = new Test1();
         int[] nums = {2, 7, 9, 11};
-        test.twoSum1(nums, 9);
+        test.myTwoSum(nums, 9);
+        int k =1;
+        int[] nums1=new int[2];
+        System.out.println(k-nums1[0]);
+    }
+
+    public  int[] myTwoSum(int[] ints,int target){
+        int[] s= new int[2];
+        Map map = new HashMap(2);
+        for (int j=0;j<ints.length;j++){
+            if ((map.get(target-ints[j]) == null)){
+                map.put(ints[j],j);
+            }else {
+                s[0]=j;
+                s[1]=Integer.parseInt(map.get(target-ints[j]).toString());
+            }
+        }
+        System.out.println("s[0]为" + s[0] + " s[1]为" + s[1]);
+        return s;
     }
 }
